@@ -56,15 +56,14 @@ steps:
     publishTestResults: true
     projects: '**/*.Tests.csproj'
 
-- script: |
-    reportgenerator -reports:$(Build.SourcesDirectory)/**/coverage.cobertura.xml -targetdir:$(Build.SourcesDirectory)/CodeCoverage -reporttypes:HtmlInline_AzurePipelines
-  displayName: 'Create code coverage report'
+#- script: |
+#    reportgenerator -reports:$(Build.SourcesDirectory)/**/coverage.cobertura.xml -targetdir:$(Build.SourcesDirectory)/CodeCoverage -reporttypes:HtmlInline_AzurePipelines
+#  displayName: 'Create code coverage report'
 
-- task: PublishCodeCoverageResults@1
-  displayName: 'Publish code coverage report'
-  inputs:
-    codeCoverageTool: 'cobertura'
-    summaryFileLocation: '$(Build.SourcesDirectory)/**/coverage.cobertura.xml'
+#- task: PublishCodeCoverageResults@1
+#  inputs:
+#   codeCoverageTool: 'cobertura'
+#    summaryFileLocation: '$(Build.SourcesDirectory)/**/coverage.cobertura.xml'
 
 
 - task: DotNetCoreCLI@2
